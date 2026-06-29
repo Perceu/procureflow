@@ -1,0 +1,16 @@
+services:
+  db:
+    image: postgres
+    env_file: .env
+    networks:
+      - chronos_net
+    ports:
+      - 5432:5432
+    volumes: 
+        - pg_data:/var/lib/postgresql
+
+volumes:
+  pg_data:
+
+networks:
+  chronos_net:
